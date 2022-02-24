@@ -4,9 +4,9 @@ pipeline {
     stage('checkout') {
       steps {
         sh 'echo Hello Welcome'
-        tool(name: 'sonarscanner4', type: 'hudson.plugins.sonar.SonarRunnerInstallation')
+        def sonarscanner = tool(name: 'sonarscanner4', type: 'hudson.plugins.sonar.SonarRunnerInstallation')
         tool(name: 'maven-3', type: 'maven')
-        sh 'sonar-scanner --version'
+        sh "${sonarscanner}/bin/sonar-scanner --version'
       }
     }
 
