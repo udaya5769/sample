@@ -6,7 +6,7 @@ pipeline {
         sh 'echo Hello Welcome'
         tool(name: 'sonarscanner4', type: 'hudson.plugins.sonar.SonarRunnerInstallation')
         tool(name: 'maven-3', type: 'maven')
-        sh 'mvn --version'
+        sh 'sonar-scanner --version'
       }
     }
 
